@@ -55,6 +55,11 @@ const weatherApi =  async (city, days)=>{
       }
 }
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+module.exports = app;
+
+// Start server only if run directly
+if (require.main === module) {
+    app.listen(3000, () => {
+      console.log('Server is running on port 3000');
     });
+  }
